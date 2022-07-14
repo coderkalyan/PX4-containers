@@ -37,7 +37,8 @@ RUN apt-get update && apt-get -y --quiet --no-install-recommends install \
 		openjdk-8-jre \
 		openssh-client \
 		pkg-config \
-		python3-dev \
+		python3.8 \
+		python3.8-dev \
 		python3-pip \
 		rsync \
 		shellcheck \
@@ -64,7 +65,7 @@ RUN pip3 install wheel setuptools
 # Python 3 dependencies installed by pip
 RUN pip3 install argparse argcomplete coverage cerberus empy jinja2 kconfiglib \
 		matplotlib==3.0.* numpy nunavut>=1.1.0 packaging pkgconfig pyros-genmsg pyulog \
-		pyyaml requests serial six toml psutil pyulog wheel jsonschema
+		pyyaml requests serial six toml psutil pyulog wheel jsonschema future-annotations
 
 # manual ccache setup
 RUN ln -s /usr/bin/ccache /usr/lib/ccache/cc \
